@@ -12,11 +12,11 @@ public class BlackjackGame {
     private String move;
 
     public BlackjackGame() {
-        inputScanner = new Scanner(System.in);
-        player = new Player("Player");
-        dealer = new Player("Dealer");
-        currentPlayer = player;
-        deck = new Deck();
+        this.inputScanner = new Scanner(System.in);
+        this.player = new Player("Player");
+        this.dealer = new Player("Dealer");
+        this.currentPlayer = player;
+        this.deck = new Deck();
     }
 
     public void playGame() {
@@ -47,7 +47,6 @@ public class BlackjackGame {
                 }
             }
 
-            // determine if game is over
             if (currentPlayer.isBust() || (player.isStaying() && dealer.isStaying())) {
                 renderWinner(player, dealer);
                 continuePlaying = false;

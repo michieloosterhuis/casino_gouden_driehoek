@@ -10,16 +10,16 @@ public class Deck {
     private final CardValue[] cardValues;
 
     public Deck () {
-        cards = new ArrayList<>();
+        this.cards = new ArrayList<>();
 
-        cardSuits = new CardSuit[] {
+        this.cardSuits = new CardSuit[] {
                 new CardSuit("diamonds", '\u2666', "red"),
                 new CardSuit("spades", '\u2660', "black"),
                 new CardSuit("hearts", '\u2665', "red"),
                 new CardSuit("clubs", '\u2663', "black")
         };
 
-        cardValues = new CardValue[] {
+        this.cardValues = new CardValue[] {
                 new CardValue("two", 2),
                 new CardValue("three", 3),
                 new CardValue("four", 4),

@@ -7,8 +7,8 @@ public class Player {
     private String name;
 
     public Player(String name) {
-        hand = new Hand();
-        isStaying = false;
+        this.hand = new Hand();
+        this.isStaying = false;
         this.name = name;
     }
 
@@ -43,7 +43,7 @@ public class Player {
     }
 
     public void renderHand() {
-        hand.render();
+        System.out.println(hand.render());
     }
 
     public String getName() {

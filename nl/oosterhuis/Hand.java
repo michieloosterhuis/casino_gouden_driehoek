@@ -1,7 +1,6 @@
 package nl.oosterhuis;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Hand {
 
@@ -9,8 +8,8 @@ public class Hand {
     private int totalValue;
 
     public Hand() {
-        cards = new ArrayList<>();
-        totalValue = 0;
+        this.cards = new ArrayList<>();
+        this.totalValue = 0;
     }
 
     public void addCard(Card card) {
@@ -25,7 +24,12 @@ public class Hand {
         return totalValue;
     }
 
-    public void render() {
-        cards.forEach(card -> System.out.println(card.render()));
+    public String render() {
+        String[] renderedCards = new String[cards.size()];
+        for (int i = 0; i < cards.size(); i++) {
+            renderedCards[i] = cards.get(i).render();
+        }
+        String newLine = System.getProperty("line.separator");
+        return String.join(newLine, renderedCards);
     }
 }
