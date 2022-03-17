@@ -12,9 +12,7 @@ public class Card {
 
     public String render() {
         return cardSuit.getSymbol() + " " +
-                cardSuit.getName() + " " +
-                cardValue.getName() + " (" +
-                cardValue.getValue() + ")";
+                cardValue.getName();
     }
 
     public int getValue() {
