@@ -1,4 +1,4 @@
-package nl.oosterhuis;
+package nl.oosterhuis.blackjack;
 
 public class Card {
 

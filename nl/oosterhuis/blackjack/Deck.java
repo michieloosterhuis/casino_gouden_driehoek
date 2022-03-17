@@ -1,13 +1,13 @@
-package nl.oosterhuis;
+package nl.oosterhuis.blackjack;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Deck {
+public abstract class Deck {
 
-    private ArrayList<Card> cards;
-    private final CardSuit[] cardSuits;
-    private final CardValue[] cardValues;
+    protected ArrayList<Card> cards;
+    protected final CardSuit[] cardSuits;
+    protected final CardValue[] cardValues;
 
     public Deck () {
         this.cards = new ArrayList<>();
@@ -35,17 +35,9 @@ public class Deck {
         };
 
         initialize();
-        shuffle();
     }
 
-    public void initialize() {
-        cards.clear();
-        for (CardSuit cardSuit : cardSuits) {
-            for (CardValue cardValue : cardValues) {
-                cards.add(new Card(cardSuit, cardValue));
-            }
-        }
-    }
+    public abstract void initialize();
 
     public void shuffle() {
         Collections.shuffle(cards);
