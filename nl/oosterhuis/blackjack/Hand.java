@@ -1,4 +1,4 @@
-package nl.oosterhuis;
+package nl.oosterhuis.blackjack;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package nl.oosterhuis;
+package nl.oosterhuis.blackjack;
 
 import java.util.Scanner;
 
@@ -10,18 +10,30 @@ public class BlackjackGame {
     private Deck deck;
     private Player currentPlayer;
     private String move;
+    private String gameType;
 
-    public BlackjackGame() {
+    public BlackjackGame(String gameType) {
         this.inputScanner = new Scanner(System.in);
         this.player = new Player("Player");
         this.dealer = new Player("Dealer");
         this.currentPlayer = player;
-        this.deck = new Deck();
+        this.gameType = gameType;
+        switch (gameType) {
+            case "simple":
+                this.deck = new SimpleDeck();
+                break;
+            case "low":
+                this.deck = new LowDeck();
+                break;
+            default:
+                throw new RuntimeException("Ongeldig speltype.");
+        }
     }
 
     public void playGame() {
 
-        System.out.println("Welkom bij het spel Black Jack!\n");
+        System.out.println("Welkom bij het spel Black Jack! (" + gameType + "-deck version)\n");
+        deck.shuffle();
         player.addCardToHand(deck.getNextCard());
         player.addCardToHand(deck.getNextCard());
         dealer.addCardToHand(deck.getNextCard());
