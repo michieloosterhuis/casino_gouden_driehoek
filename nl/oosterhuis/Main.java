@@ -1,9 +1,13 @@
 package nl.oosterhuis;
-import nl.oosterhuis.blackjack.BlackjackGame;
+
+import nl.oosterhuis.slotmachines.SlotMachineGame;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        BlackjackGame blackjackGame = new BlackjackGame("simple");
-        blackjackGame.playGame();
+        Scanner scanner = new Scanner(System.in);
+        SlotMachineGame slotMachineGame = new SlotMachineGame(scanner);
+        slotMachineGame.playGame();
     }
 }
