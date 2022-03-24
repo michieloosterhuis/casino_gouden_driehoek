@@ -12,20 +12,19 @@ public class Reel {
         roll();
     }
 
+    // getters
+    public Symbol getSymbol() {
+        return symbol;
+    }
+
     // methods
     public void roll() {
         Random random = new Random();
         int pick = random.nextInt(Symbol.values().length);
-        Symbol symbol = Symbol.values()[pick];
-        this.symbol = symbol;
+        this.symbol = Symbol.values()[pick];
     }
 
     public String render() {
-        return symbol.toString();
-        //return Character.toString(symbol.icon);
-    }
-
-    public Symbol getSymbol() {
-        return symbol;
+        return Character.toString(symbol.icon);
     }
 }

@@ -15,11 +15,30 @@ public class Penny extends SlotMachine {
 
     @Override
     public int calculatePayout() {
+        if (this.getReelDeck().allReelsHaveSymbol(Symbol.HEART)) {
+            return 10;
+        }
+        if (this.getReelDeck().allReelsHaveSymbol(Symbol.CLUB)) {
+            return 10;
+        }
+        if (this.getReelDeck().allReelsHaveSymbol(Symbol.SPADE)) {
+            return 10;
+        }
+        if (this.getReelDeck().allReelsHaveSymbol(Symbol.STAR)) {
+            return 10;
+        }
+        if (this.getReelDeck().allReelsHaveSymbol(Symbol.YINYANG)) {
+            return 10;
+        }
         return 0;
     }
 
     @Override
     public String renderWinningConditions() {
-        return null;
+        return "\n3 x " + Symbol.HEART + " = 10 tokens" +
+        "\n3 x " + Symbol.CLUB + " = 10 tokens" +
+        "\n3 x " + Symbol.SPADE + " = 10 tokens" +
+        "\n3 x " + Symbol.STAR + " = 10 tokens" +
+        "\n3 x " + Symbol.YINYANG + " = 10 tokens";
     }
 }

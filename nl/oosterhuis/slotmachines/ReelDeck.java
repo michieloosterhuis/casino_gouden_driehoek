@@ -21,10 +21,12 @@ public class ReelDeck {
 
     public String render() {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("\n");
         for (Reel reel : reels) {
-            stringBuilder.append("| " + reel.render() + " ");
+            stringBuilder.append("| ").append(reel.render()).append(" ");
         }
         stringBuilder.append("|");
+        stringBuilder.append("\n");
         return stringBuilder.toString();
     }
 

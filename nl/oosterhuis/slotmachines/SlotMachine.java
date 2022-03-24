@@ -20,19 +20,32 @@ public abstract class SlotMachine {
         this.reelDeck = new ReelDeck(reels);
     }
 
+    // getters
+    public int getNumberOfReels() {
+        return numberOfReels;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ReelDeck getReelDeck() {
+        return reelDeck;
+    }
+
     // methods
     public void renderIntro() {
-        System.out.println("Hartelijk welkom in Casino De Gouden Driehoek! Je speelt op de: " + name);
+        System.out.println("Je speelt op de \"" + name + "\" fruitautomaat.");
+        System.out.println(renderWinningConditions());
     }
 
     public int roll() {
-        System.out.println("Je hebt aan de hendel getrokken.");
-        return 0;
+        reelDeck.roll();
+        return calculatePayout();
     }
 
     public String render() {
-        System.out.println("De uitslag is bekend.");
-        return "";
+        return reelDeck.render();
     }
 
     public abstract int getRollPrice();
